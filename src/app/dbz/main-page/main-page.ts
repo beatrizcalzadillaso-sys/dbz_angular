@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Personajes } from '../personajes/personajes';
 
 @Component({
-  imports: [FormsModule],
+  imports: [FormsModule, Personajes],
   selector: 'app-main-page',
   styleUrl: './main-page.css',
   templateUrl: './main-page.html',
@@ -19,7 +20,7 @@ export class MainPage {
   }
   
   agregar(){
-    if (this.nuevo.nombre.trim().length===0) return;
+    if (this.nuevo.nombre.trim().length===0) return; 
     console.log(this.nuevo);
     this.personajes.push(this.nuevo)
     this.nuevo = {nombre: '', poder: 0 }
