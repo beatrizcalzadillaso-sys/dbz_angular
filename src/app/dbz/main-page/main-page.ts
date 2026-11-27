@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Personaje } from '../interfaces/dbz.interface';
+import { Agregar } from '../agregar/agregar';
 import { Personajes } from '../personajes/personajes';
 
 @Component({
-  imports: [FormsModule, Personajes],
+  imports: [FormsModule, Agregar, Personajes],
   selector: 'app-main-page',
   styleUrl: './main-page.css',
   templateUrl: './main-page.html',
@@ -13,21 +15,12 @@ export class MainPage {
     {nombre: 'Goku', poder: 15000},
     {nombre: 'Vegeta', poder: 9000}
   ]
-  
-  nuevo:Personaje ={
-    nombre: ' ',
-    poder: 0
+
+  agregarPersonaje(personaje:Personaje){
+    this.personajes.push(personaje)
   }
   
-  agregar(){
-    if (this.nuevo.nombre.trim().length===0) return; 
-    console.log(this.nuevo);
-    this.personajes.push(this.nuevo)
-    this.nuevo = {nombre: '', poder: 0 }
-  }
 }
 
-interface Personaje{
-  nombre: String;
-  poder: number
-}
+
+

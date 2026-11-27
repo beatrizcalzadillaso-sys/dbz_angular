@@ -9,5 +9,5 @@ import { MainPage } from './dbz/main-page/main-page';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('dbz');
+  protected readonly title = signal('dbz'); // QUE HACIA ESTO???
 }
